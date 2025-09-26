@@ -20,6 +20,15 @@ void SwapRef(int& a, int& b)
     cout << "SwapRef: a = " << a << " b = " << b << endl;
 }
 
+// 使用返回引用的函数
+
+int oneX = 10;
+
+int& refValue(int& x)
+{
+    return x;
+}
+
 int main()
 {
     int a = 10, b = 20;
@@ -30,5 +39,10 @@ int main()
     b = 20;
     SwapRef(a, b);
     cout << "调用SwapRef: a = " << a << " b = " << b << endl;
+    cout << "----------------------------------------------" << endl;
+
+    refValue(oneX) = 30;
+    cout << "oneX=" << oneX << endl;
+
     return 0;
 }
