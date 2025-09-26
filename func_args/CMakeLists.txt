@@ -1,0 +1,1 @@
+add_executable(func_args main.cpp)

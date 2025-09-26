@@ -5,3 +5,5 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_subdirectory(io_test)
 add_subdirectory(type_cast)
+add_subdirectory(cite)
+add_subdirectory(func_args)
