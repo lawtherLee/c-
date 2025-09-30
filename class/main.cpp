@@ -1,0 +1,71 @@
+#include <iostream>
+using namespace std;
+//
+// Created by 尚泽 on 2025/9/30.
+//
+class myDate
+{
+public:
+    myDate();
+    myDate(int, int, int);
+
+    void setDate(int, int, int);
+    void setDate(myDate);
+
+    myDate getDate();
+    void setYear(int);
+    int getMonth();
+
+    void printDate() const;
+
+private:
+    int year, month, day;
+};
+
+myDate::myDate()
+{
+    year = 1970;
+    month = 1;
+    day = 1;
+}
+
+myDate::myDate(int y, int m, int d)
+{
+    year = y;
+    month = m;
+    day = d;
+}
+
+void myDate::setDate(int y, int m, int d)
+{
+    year = y;
+    month = m;
+    day = d;
+}
+
+void myDate::setDate(myDate d)
+{
+    year = d.year;
+    month = d.month;
+    day = d.day;
+}
+
+myDate myDate::getDate()
+{
+    return *this;
+}
+
+void myDate::setYear(int y)
+{
+    year = y;
+}
+
+int myDate::getMonth()
+{
+    return month;
+}
+
+void myDate::printDate() const
+{
+    cout << year << "/" << month << "/" << day << endl;
+}
