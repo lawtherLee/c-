@@ -69,3 +69,51 @@ void myDate::printDate() const
 {
     cout << year << "/" << month << "/" << day << endl;
 }
+
+class Student
+{
+public:
+    void setStudent(string, myDate);
+    void setName(string);
+    string getName();
+    void setBirthday(myDate);
+    myDate getBirthday();
+    void printStudent() const;
+
+private:
+    string name;
+    myDate birthday;
+};
+
+void Student::setStudent(string s, myDate d)
+{
+    name = s;
+    birthday.setDate(d);
+}
+
+void Student::setName(string n)
+{
+    name = std::move(n);
+}
+
+string Student::getName()
+{
+    return name;
+}
+
+void Student::setBirthday(myDate d)
+{
+    birthday.setDate(d);
+}
+
+myDate Student::getBirthday()
+{
+    return birthday;
+}
+
+void Student::printStudent() const
+{
+    cout << "姓名：" << name << "\t生日：";
+    birthday.printDate();
+    cout << endl;
+}
