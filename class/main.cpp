@@ -125,9 +125,11 @@ int main()
     Student ss;
     int y, m, d;
     string name;
+    Student* sp = &ss;
     cout << "请输入学生的姓名和生日，生日以\"年 月 日\"的次序输入：";
     cin >> name >> y >> m >> d;
     ss.setStudent(name, myDate(y, m, d));
+    // sp -> setStudent(name, myDate(y, m, d));
     ss.printStudent();
     return 0;
 }
