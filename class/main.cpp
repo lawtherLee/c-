@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 using namespace std;
 //
 // Created by 尚泽 on 2025/9/30.
@@ -116,4 +117,17 @@ void Student::printStudent() const
     cout << "姓名：" << name << "\t生日：";
     birthday.printDate();
     cout << endl;
+}
+
+// 程序验证
+int main()
+{
+    Student ss;
+    int y, m, d;
+    string name;
+    cout << "请输入学生的姓名和生日，生日以\"年 月 日\"的次序输入：";
+    cin >> name >> y >> m >> d;
+    ss.setStudent(name, myDate(y, m, d));
+    ss.printStudent();
+    return 0;
 }
