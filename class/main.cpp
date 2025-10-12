@@ -74,6 +74,9 @@ void myDate::printDate() const
 class Student
 {
 public:
+    Student();
+    Student(const Student& student); // 复制构造函数
+    Student(string);
     void setStudent(string, myDate);
     void setName(string);
     string getName();
@@ -85,6 +88,23 @@ private:
     string name;
     myDate birthday;
 };
+
+// 构造函数
+Student::Student() : name("Noname"), birthday(myDate())
+{
+}
+
+Student::Student(string n) : name(n), birthday(myDate())
+{
+}
+
+// 复制构造函数体
+Student::Student(const Student& student)
+{
+    name = student.name;
+    birthday = student.birthday;
+}
+
 
 void Student::setStudent(string s, myDate d)
 {
@@ -120,16 +140,40 @@ void Student::printStudent() const
 }
 
 // 程序验证
+
 int main()
 {
-    Student ss;
-    int y, m, d;
+    Student stud;
+    Student ss[2];
+    int y, m, d, i;
     string name;
-    Student* sp = &ss;
-    cout << "请输入学生的姓名和生日，生日以\"年 月 日\"的次序输入：";
-    cin >> name >> y >> m >> d;
-    ss.setStudent(name, myDate(y, m, d));
-    // sp -> setStudent(name, myDate(y, m, d));
-    ss.printStudent();
+    Student* sp = &stud;
+    sp->setName("jack");
+    sp->printStudent();
+    // stud.printStudent();
+    // for (i = 0; i < 2; i++)
+    //     ss[i].printStudent();
+    //
+    // for (i = 0; i < 2; i++)
+    // {
+    //     cout << "请输入学生的姓名和生日，生日以\"年 月 日\"的次序输入：";
+    //     cin >> name >> y >> m >> d;
+    //     ss[i].setStudent(name, myDate(y, m, d));
+    // }
+    // for (i = 0; i < 2; i++)
+    //     ss[i].printStudent();
+
+
+    // 指针数组的初始化
+    Student* spointer[2] = {new Student(), &stud};
+    // 对象数组的初始化
+    Student sy[2] = {Student(), stud};
+    for (i = 0; i < 2; i++)
+    {
+        spointer[i]->setName(std::to_string(i)); // 改了stud的name也不影响sy的stud
+        spointer[i]->printStudent();
+    }
+    for (i = 0; i < 2; i++)
+        sy[i].printStudent();
     return 0;
 }
