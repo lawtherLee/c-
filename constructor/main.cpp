@@ -33,6 +33,6 @@ int main()
     Demo d1(1);
     d1.printDemo();
     d1 = 6;
-    d1.printDemo();
+    // d1.printDemo();
     return 0;
 }

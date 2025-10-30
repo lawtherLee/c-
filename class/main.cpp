@@ -18,6 +18,7 @@ public:
     int getMonth();
 
     void printDate() const;
+    ~myDate();
 
 private:
     int year, month, day;
@@ -28,6 +29,7 @@ myDate::myDate()
     year = 1970;
     month = 1;
     day = 1;
+    cout << "myDate构造函数" << endl;
 }
 
 myDate::myDate(int y, int m, int d)
@@ -71,6 +73,11 @@ void myDate::printDate() const
     cout << year << "/" << month << "/" << day << endl;
 }
 
+myDate::~myDate()
+{
+    cout << "myDate析构函数" << endl;
+}
+
 class Student
 {
 public:
@@ -83,6 +90,7 @@ public:
     void setBirthday(myDate);
     myDate getBirthday();
     void printStudent() const;
+    ~Student();
 
 private:
     string name;
@@ -92,6 +100,7 @@ private:
 // 构造函数
 Student::Student() : name("Noname"), birthday(myDate())
 {
+    cout << "Student构造函数" << endl;
 }
 
 Student::Student(string n) : name(n), birthday(myDate())
@@ -139,17 +148,23 @@ void Student::printStudent() const
     cout << endl;
 }
 
-// 程序验证
+Student::~Student()
+{
+    cout << "Student析构函数" << endl;
+}
 
+// 程序验证
 int main()
 {
-    Student stud;
-    Student ss[2];
-    int y, m, d, i;
-    string name;
-    Student* sp = &stud;
-    sp->setName("jack");
-    sp->printStudent();
+    // Student stud;
+    // Student ss[2];
+    // int y, m, d, i;
+    // string name;
+    // Student* sp = &stud;
+    // sp->setName("jack");
+    // sp->printStudent();
+
+    // 常规用法
     // stud.printStudent();
     // for (i = 0; i < 2; i++)
     //     ss[i].printStudent();
@@ -165,15 +180,23 @@ int main()
 
 
     // 指针数组的初始化
-    Student* spointer[2] = {new Student(), &stud};
-    // 对象数组的初始化
-    Student sy[2] = {Student(), stud};
-    for (i = 0; i < 2; i++)
-    {
-        spointer[i]->setName(std::to_string(i)); // 改了stud的name也不影响sy的stud
-        spointer[i]->printStudent();
-    }
-    for (i = 0; i < 2; i++)
-        sy[i].printStudent();
+    // Student* spointer[2] = {new Student(), &stud};
+    // // 对象数组的初始化
+    // Student sy[2] = {Student(), stud};
+    // for (i = 0; i < 2; i++)
+    // {
+    //     spointer[i]->setName(std::to_string(i)); // 改了stud的name也不影响sy的stud
+    //     spointer[i]->printStudent();
+    // }
+    // for (i = 0; i < 2; i++)
+    //     sy[i].printStudent();
+
+    // -------------------------------析构函数---------------------------------------
+    // Student* ss = new Student[2];
+    // delete []ss;
+    //
+    // Student* ss[2] = {new Student(), new Student()};
+    // delete ss[1];
+    // delete ss[2];
     return 0;
 }
