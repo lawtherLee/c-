@@ -27,7 +27,7 @@ public:
 
     static void staticFun()
     {
-        cout << "current_num" << num << endl;
+        cout << "current_num = " << num << endl;
     }
 };
 
@@ -36,5 +36,15 @@ int classA::num = 0;
 int main()
 {
     classA obj(1.2, 3.4), *p;
+    cout << "classA::num = " << classA::num << endl; // 类名限定符
+    classA::staticFun();
+    cout << "obj.num = " << obj.num << endl; // 对象名限定符
+    obj.staticFun();
+
+    cout << endl;
+
+    classA A[3];
+    cout << "classA::num = " << classA::num << endl;
+
     return 0;
 }
