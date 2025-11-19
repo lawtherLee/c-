@@ -1,1 +1,1 @@
-add_executable(class main.cpp)
+add_executable(class main.cpp enclosingClass.cpp)

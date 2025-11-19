@@ -4,6 +4,43 @@
 #include <iostream>
 using namespace std;
 
+
+class Sample
+{
+public:
+    Sample();
+    void getValue() const;
+    void getValue();
+    void priValue() const;
+    void priVcon();
+};
+
+Sample::Sample()
+{
+    // cout << "Sample()" << endl;
+}
+
+void Sample::getValue() const
+{
+    cout << "常量成员函数" << endl;
+}
+
+void Sample::getValue()
+{
+    cout << "非常量成员函数" << endl;
+}
+
+void Sample::priValue() const
+{
+    cout << "常量成员函数" << endl;
+}
+
+void Sample::priVcon()
+{
+    cout << "非常量成员函数" << endl;
+}
+
+
 int main()
 {
     int a = 3;
@@ -14,5 +51,15 @@ int main()
 
     int const* const a6 = &a;
     const int* const a7 = &a;
+
+    const Sample cono;
+    Sample o;
+    cout << "cono\t";
+
+    cono.getValue();
+    o.getValue(); // 非常量函数
+    o.priValue(); // 常量函数
+
+
     return 0;
 }

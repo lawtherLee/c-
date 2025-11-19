@@ -1,1 +1,1 @@
-add_executable(const main.cpp)
+add_executable(const main.cpp constClass.cpp)
