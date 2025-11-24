@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string>
+
+#include "enclosingClass.cpp.h"
 using namespace std;
 //
 // Created by 尚泽 on 2025/9/30.
@@ -198,5 +200,15 @@ int main()
     // Student* ss[2] = {new Student(), new Student()};
     // delete ss[1];
     // delete ss[2];
+
+
+    // -------------------------------封闭类对象的创建与消亡---------------------------------------
+    CCar car(48900, 17, 225);
+    cout << "price = " << car.getPrice();
+    cout << "\tCTyre.Radius = " << car.getCTyre().getRadius() << "\twidth = " << car.getCTyre().getWidth() << endl;
+
+    // CCar car1;
+    // cout << "price = " << car1.getPrice();
+    // cout << "\tCTyre.Radius = " << car1.getCTyre().getRadius() << "\twidth = " << car1.getCTyre().getWidth();
     return 0;
 }
