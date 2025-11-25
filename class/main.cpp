@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 
+#include "copyConstruct.h"
 #include "enclosingClass.cpp.h"
 using namespace std;
 //
@@ -203,12 +204,16 @@ int main()
 
 
     // -------------------------------封闭类对象的创建与消亡---------------------------------------
-    CCar car(48900, 17, 225);
-    cout << "price = " << car.getPrice();
-    cout << "\tCTyre.Radius = " << car.getCTyre().getRadius() << "\twidth = " << car.getCTyre().getWidth() << endl;
+    // CCar car(48900, 17, 225);
+    // cout << "price = " << car.getPrice();
+    // cout << "\tCTyre.Radius = " << car.getCTyre().getRadius() << "\twidth = " << car.getCTyre().getWidth() << endl;
 
     // CCar car1;
     // cout << "price = " << car1.getPrice();
     // cout << "\tCTyre.Radius = " << car1.getCTyre().getRadius() << "\twidth = " << car1.getCTyre().getWidth();
+
+    // -------------------------------复制构造函数---------------------------------------
+    B b1, b2(b1);
+
     return 0;
 }

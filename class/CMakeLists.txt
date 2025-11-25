@@ -1,1 +1,3 @@
-add_executable(class main.cpp enclosingClass.cpp.h)
+add_executable(class main.cpp enclosingClass.cpp.h
+        copyConstruct.h
+)
