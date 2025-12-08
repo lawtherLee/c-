@@ -16,6 +16,8 @@ private:
 public:
     myComplex();
     myComplex(double r, double i);
+    myComplex AddRealOne();
+    myComplex AddImagOne();
     myComplex addCom(myComplex c);
     void outCom();
 };

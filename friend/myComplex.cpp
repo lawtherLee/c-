@@ -9,10 +9,22 @@ myComplex::myComplex()
     imag = 0;
 }
 
-myComplex::myComplex(double r, double i)
+myComplex::myComplex(double real, double i)
 {
-    real = r;
+    this->real = real;
     imag = i;
+}
+
+myComplex myComplex::AddImagOne()
+{
+    this->real++;
+    return *this; // 返回对象本身
+}
+
+myComplex myComplex::AddRealOne()
+{
+    this->imag++;
+    return *this; // 返回对象本身
 }
 
 myComplex myComplex::addCom(myComplex c)
@@ -27,12 +39,14 @@ void myComplex::outCom()
 
 void runMyComplex()
 {
-    myComplex c1(1, 2), c2(3, 4);
+    myComplex c1(1, 2), c2(3, 4), c3;
     myComplex res = c1.addCom(c2);
     c1.outCom();
     cout << " + ";
     c2.outCom();
     cout << " = ";
     res.outCom();
-    cout << endl;
+    cout << endl << "我是分界线" << endl;
+    c3 = res.AddRealOne();
+    c3.outCom();
 }

@@ -7,7 +7,7 @@
 int main()
 {
     // runPixelFun();
-    // runMyComplex();
-    runMyFriendComplex();
+    runMyComplex();
+    // runMyFriendComplex();
     return 0;
 }
