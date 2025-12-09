@@ -20,6 +20,9 @@ public:
     myComplex AddImagOne();
     myComplex addCom(myComplex c);
     void outCom();
+
+    myComplex operator-(const myComplex& c);
+    friend myComplex operator+(const myComplex& c1, const myComplex& c2);
 };
 
 void runMyComplex();

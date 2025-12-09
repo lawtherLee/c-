@@ -37,6 +37,16 @@ void myComplex::outCom()
     cout << "(" << real << "," << imag << ")";
 }
 
+myComplex myComplex::operator-(const myComplex& c)
+{
+    return myComplex(this->real - c.real, this->imag - c.imag);
+}
+
+myComplex operator+(const myComplex& c1, const myComplex& c2)
+{
+    return myComplex(c1.real + c2.real, c1.imag + c2.imag);
+}
+
 void runMyComplex()
 {
     myComplex c1(1, 2), c2(3, 4), c3;
@@ -49,4 +59,7 @@ void runMyComplex()
     cout << endl << "我是分界线" << endl;
     c3 = res.AddRealOne();
     c3.outCom();
+    cout << endl << "运算符重载" << endl;
+    myComplex c4 = c1 - c2;
+    c4.outCom();
 }
