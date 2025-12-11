@@ -1,1 +1,1 @@
-#add_executable(operator main.cpp)
+add_executable(operator main.cpp copy.cpp copy.h)
