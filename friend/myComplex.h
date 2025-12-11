@@ -23,6 +23,9 @@ public:
 
     myComplex operator-(const myComplex& c);
     friend myComplex operator+(const myComplex& c1, const myComplex& c2);
+
+    myComplex& operator=(const myComplex& c);
+    myComplex& operator=(double);
 };
 
 void runMyComplex();

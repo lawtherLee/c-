@@ -39,12 +39,27 @@ void myComplex::outCom()
 
 myComplex myComplex::operator-(const myComplex& c)
 {
-    return myComplex(this->real - c.real, this->imag - c.imag);
+    return myComplex(this->real * c.real, this->imag - c.imag);
 }
 
 myComplex operator+(const myComplex& c1, const myComplex& c2)
 {
     return myComplex(c1.real + c2.real, c1.imag + c2.imag);
+}
+
+myComplex& myComplex::operator=(const myComplex& c)
+{
+    this->real = c.real;
+    this->imag = c.imag;
+    return *this;
+}
+
+myComplex& myComplex::operator=(double r)
+
+{
+    this->real = r;
+    this->imag = 0;
+    return *this;
 }
 
 void runMyComplex()
@@ -62,4 +77,10 @@ void runMyComplex()
     cout << endl << "运算符重载" << endl;
     myComplex c4 = c1 - c2;
     c4.outCom();
+
+    cout << endl << "幅值运算符重载" << endl;
+    myComplex res1, c5;
+    c5 = 1;
+    res1 = c5;
+    res1.outCom();
 }
