@@ -4,11 +4,14 @@
 
 #include "copy.h"
 
+
 void runShallowCopy()
 {
     pointer p1;
     pointer p2(p1);
-    pointer p3 = p1;
+    pointer p3;
+    p1 = p1;
+    p3 = p1;
     cout << "\n初始化后，各对象值及内存地址" << endl;
     cout << "p1:\t" << &p1 << ", \t" << p1.a << ", \t" << p1.p << ", \t" << *p1.p << ", \t" << &p1.p << endl;
     cout << "p2:\t" << &p2 << ", \t" << p2.a << ", \t" << p2.p << ", \t" << *p2.p << ", \t" << &p2.p << endl;
