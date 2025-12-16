@@ -18,7 +18,7 @@ public:
     {
     };
 
-    myComplex(double r = 0.0, double i = 0.0) : real(r), imag(i)
+    myComplex(double r, double i) : real(r), imag(i)
     {
     }
 
@@ -26,5 +26,6 @@ public:
     friend istream& operator>>(istream& is, myComplex& c);
 };
 
+void runIostream();
 
 #endif //C___STREAM_H
