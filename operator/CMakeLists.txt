@@ -1,1 +1,1 @@
-add_executable(operator main.cpp copy.cpp copy.h stream.h stream.cpp)
+add_executable(operator main.cpp copy.cpp copy.h stream.h stream.cpp Increment.cpp Increment.h)

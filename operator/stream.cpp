@@ -7,7 +7,7 @@
 #include <cstdlib>
 using namespace std;
 
-ostream operator<<(ostream& os, const myComplex& c)
+ostream& operator<<(ostream& os, const myComplex& c)
 {
     if (c.imag >= 0)
         os << c.real << "+" << c.imag << "i";
@@ -34,4 +34,9 @@ istream& operator>>(istream& is, myComplex& c)
 
 void runIostream()
 {
+    myComplex c, c1;
+    int n;
+    cout << "输入两个复数a+-bi 和一个整数 用空格分开" << endl;
+    cin >> c >> c1 >> n;
+    cout << c << "," << n << "," << c1;
 };
