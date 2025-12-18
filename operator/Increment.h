@@ -18,7 +18,7 @@ public:
 
     Increment& operator++();
     Increment operator++(int);
-    operator int() { return n; };
+    operator int() const { return n; };
     friend Increment& operator--(Increment&);
     friend Increment operator--(Increment&, int);
 };
