@@ -7,7 +7,7 @@
 #define C___DERIVED_H
 #include <iostream>
 using namespace std;
-class another;
+class Another;
 
 class Base
 {
@@ -15,30 +15,30 @@ private:
     float x;
 
 public:
-    void print(const another& k);
+    void print(const Another& k);
 };
 
-class derived : public Base
+class Derived : public Base
 {
 private:
     float y;
 };
 
-class another
+class Another
 {
 private:
     int aaa;
 
 public:
-    another()
+    Another()
     {
         aaa = 100;
     }
 
-    friend void Base::print(const another& k); // 基类的成员声明为本类的友元
+    friend void Base::print(const Another& k); // 基类的成员声明为本类的友元
 };
 
-inline void Base::print(const another& k)
+inline void Base::print(const Another& k)
 {
     cout << "Base:" << k.aaa << endl;
 }
@@ -46,8 +46,8 @@ inline void Base::print(const another& k)
 inline void runDerived()
 {
     Base a;
-    derived d;
-    another ano;
+    Derived d;
+    Another ano;
     a.print(ano);
     d.print(ano);
 }

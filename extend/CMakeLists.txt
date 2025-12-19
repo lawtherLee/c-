@@ -1,3 +1,7 @@
 add_executable(extend main.cpp
-        derived.cpp
-        derived.h)
+        derived.h
+        static.cpp
+        visitDerived.cpp
+        visitDerived.h
+        visitBase.cpp
+        visitBase.h)
