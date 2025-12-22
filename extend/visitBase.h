@@ -16,12 +16,12 @@ private:
     int age;
 
 public:
-    void PrintInfo();
+    void PrintInfo() const;
     void SetInfo(const string&, const string&, int, char);
     void SetName(string);
-    void GetName();
+    string GetName() const;
     void SetId(string);
-    void GetId();
+    string GetId() const;
 };
 
 
