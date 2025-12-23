@@ -24,5 +24,15 @@ public:
     string GetId() const;
 };
 
+class UndergraduateStudent : public Student
+{
+private:
+    string department;
+
+public:
+    void PrintInfo() const;
+    void SetInfo(const string&, const string&, int, char, const string&);
+};
+
 
 #endif //C___VISITBASE_H

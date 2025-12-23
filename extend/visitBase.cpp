@@ -41,3 +41,9 @@ string Student::GetId() const
 {
     return id;
 }
+
+void UndergraduateStudent::PrintInfo() const
+{
+    Student::PrintInfo();
+    cout << "专业：\t" << department << endl;
+}
