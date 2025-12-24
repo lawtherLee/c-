@@ -11,6 +11,6 @@ int main()
     // runDerived();
     // runStatic();
     // runVisitDerived();
-    runBaseVisited();
+    runBaseVisited2();
     return 0;
 }

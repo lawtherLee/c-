@@ -78,7 +78,21 @@ void runBaseVisited()
     s3.SetInfo("李四", "2023123456789", 22, 'F', "软件工程", "王教授");
     s2.PrintInfo();
     // cout << s2.name << endl; // 私有成员不能直接访问
-    cout << s2.GetName() << endl;
+    // cout << s2.GetName() << endl;
     s2.SetName("王五");
     s2.PrintInfo();
+    s3.Student::PrintInfo(); // 调用基类方法
+}
+
+// ------------------------------------------- end ---------------------------------------------------
+void runBaseVisited2()
+{
+    employee emp(25, 5000.0, "张三");
+    manager man(30, 8000.0, "李四", 2);
+    engineer eng(28, 7000.0, "王五", 'E', 'M');
+    director dir1(35, 10000.0, "赵六", 3, PS);
+
+    emp.print();
+    eng.print();
+    dir1.print();
 }
