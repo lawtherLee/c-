@@ -34,5 +34,18 @@ public:
     void SetInfo(const string&, const string&, int, char, const string&);
 };
 
+class GraduatedStudent : public Student
+{
+private:
+    string department;
+    string advisor;
+
+public:
+    void PrintInfo() const;
+    void SetInfo(const string& name_, const string& id_, int age_, char gender_, const string& department_,
+                 const string& advisor_);
+};
+
+void runBaseVisited();
 
 #endif //C___VISITBASE_H
