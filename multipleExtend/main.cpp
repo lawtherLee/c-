@@ -3,10 +3,12 @@
 //
 #include "visits.h"
 #include "compatibility.h"
+#include "constructor.h"
 
 int main()
 {
     // run_visits();
-    run_compatibility();
+    // run_compatibility();
+    run_constructor();
     return 0;
 }

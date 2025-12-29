@@ -5,7 +5,7 @@
 #include "operator.h"
 
 void run_operator() {
-    CDerived d1,d2;
-    CDerived d3(d1);
-    d2 = d1;
+  CDerived d1, d2;
+  CDerived d3(d1);
+  d2 = d1;
 }
