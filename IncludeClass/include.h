@@ -4,13 +4,27 @@
 
 #ifndef C___INCLUDE_H
 #define C___INCLUDE_H
+#include <iostream>
+using namespace std;
 
+class B;
 
+class A {
+public:
+  int aInt{};
+  B *bPoint = NULL;
 
-class include {
-
+  void setValue(int v) { aInt = v; }
 };
 
+class B {
+public:
+  A aCla;
+  int bInt{};
 
+  void setValue(int v) { bInt = v; }
+};
 
-#endif //C___INCLUDE_H
+void run_include();
+
+#endif // C___INCLUDE_H

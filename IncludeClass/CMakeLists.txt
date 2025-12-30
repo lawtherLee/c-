@@ -1,0 +1,1 @@
+add_executable(IncludeClass main.cpp include.cpp include.h)
