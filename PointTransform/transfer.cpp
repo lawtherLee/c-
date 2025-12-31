@@ -7,7 +7,8 @@
 void run_transfer() {
   CDerived objDerived(3);
   CBase objBase(5);
-  CBase *pBase = &objDerived;       // 指向派生类对象的基类指针
+  CBase *pBase;
+  pBase = &objDerived;              // 指向派生类对象的基类指针
   CDerived *pDerived = &objDerived; // 指向派生类对象的指针
   cout << "使用派生类指针调用函数" << endl;
   pDerived->print();
