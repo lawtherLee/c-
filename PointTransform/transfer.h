@@ -4,11 +4,29 @@
 
 #ifndef C___TRANSFER_H
 #define C___TRANSFER_H
+#include <iostream>
+using namespace std;
 
+class CBase {
+protected:
+  int n;
 
-class transfer
-{
+public:
+  CBase(int i) : n(i) {}
+  void print() { cout << "CBase.n = " << n << endl; }
 };
 
+class CDerived : public CBase {
+public:
+  int v;
+  CDerived(int i) : CBase(i), v(2 * i) {}
+  void print() {
+    cout << "CDerived.n = " << n << endl;
+    cout << "CDerived.v = " << v << endl;
+  }
+  void func() {}
+};
 
-#endif //C___TRANSFER_H
+void run_transfer();
+
+#endif // C___TRANSFER_H
