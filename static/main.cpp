@@ -45,6 +45,20 @@ int main()
 
     classA A[3];
     cout << "classA::num = " << classA::num << endl;
+    classA::staticFun();
 
+    cout << endl;
+
+    p = new classA(5.6, 7.8);
+    cout << "classA::num = " << classA::num << endl;
+    classA::staticFun();
+    cout << "p->num = " << p->num << endl;
+    p->staticFun();
+
+    cout << endl;
+
+    cout << "sizeof(obj) = " << sizeof(obj) << endl;
+    cout << "sizeof(A) = " << sizeof(A) << endl;
+    cout << "sizeof(p) = " << sizeof(p) << endl;
     return 0;
 }
