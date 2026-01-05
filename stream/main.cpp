@@ -1,3 +1,4 @@
+#include "cin.hpp"
 #include "cout.hpp"
 #include "outputNum.hpp"
 #include "setiosflags.hpp"
@@ -7,7 +8,8 @@ int main() {
   // outputInt();
   // outputFloat();
   // runSetIosFlags();
-  runCout();
+  // runCout();
+  runCin();
   // 计算平均值
   // int x, count, sum = 0;
   // freopen("input.dat", "r", stdin);
