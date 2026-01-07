@@ -1,8 +1,9 @@
 
-#include "sort_with_other_file.hpp"
-
+// #include "sort_with_other_file.hpp"
+#include "binary.hpp"
 int main() {
-  runSortScore();
+  // runSortScore();
+  runBinaryStudent();
   // runOpenFile();
   // runScore();
   return 0;
