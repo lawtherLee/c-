@@ -3,7 +3,8 @@
 #include "binary.hpp"
 int main() {
   // runSortScore();
-  runBinaryStudent();
+  // runBinaryStudent();
+  readBinaryStudent();
   // runOpenFile();
   // runScore();
   return 0;

@@ -1,6 +1,7 @@
 #ifndef BINARY_HPP
 #define BINARY_HPP
 #include <fstream>
+#include <iomanip>
 #include <iostream>
 using namespace std;
 class CStudent {
@@ -32,5 +33,24 @@ inline void runBinaryStudent() {
     outFile.write((char *)&stu, sizeof(CStudent));
   }
   outFile.close();
+}
+
+inline void readBinaryStudent() {
+
+  ifstream inFile("student.dat", ios::in | ios::binary);
+  if (!inFile) {
+    cout << "open student.dat error!" << endl;
+  }
+  CStudent stu;
+  int count{}, nbyte{};
+  cout << "学号 姓名 成绩\n";
+  while (inFile.read((char *)&stu, sizeof(stu))) {
+    cout << left << setw(10) << stu.id << " " << setw(20) << stu.name << " "
+         << setw(3) << right << stu.score << endl;
+    count++;
+    nbyte += inFile.gcount();
+  }
+  cout << "共读取 " << count << " 条记录，占用 " << nbyte << " 字节" << endl;
+  inFile.close();
 }
 #endif
