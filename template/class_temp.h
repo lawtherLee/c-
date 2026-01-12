@@ -16,7 +16,10 @@ public:
   Pair(T1 k, T2 v) : first(k), second(v) {}
 
   bool operator<(const Pair<T1, T2> &p) const;
+  // 类模版中使用函数模版
+  template <class T> void print(T x) { cout << x << endl; }
 };
+
 template <class T1, class T2>
 bool Pair<T1, T2>::operator<(const Pair<T1, T2> &p) const {
   return first < p.first;
@@ -39,6 +42,7 @@ inline void runPair() {
   } else {
     cout << student.first << "位于" << student2.first << "之前" << endl;
   }
+  student.print<string>(student.first);
 }
 
 template <class T> class TestClass {

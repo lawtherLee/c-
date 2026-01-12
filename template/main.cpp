@@ -9,7 +9,7 @@ int main() {
   // runMyDate();
   // runObjSort();
   // runTempOverRide();
-  //   runPair();
-  runTestClass();
+  runPair();
+  //   runTestClass();
   return 0;
 }
