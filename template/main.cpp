@@ -1,5 +1,6 @@
 #include "class_temp.h"
 #include "class_temp_with_static.hpp"
+#include "extends.hpp"
 #include "object_sort.h"
 #include "opject_swap.h"
 #include "override.h"
@@ -11,7 +12,11 @@ int main() {
   // runObjSort();
   // runTempOverRide();
   //   runPair();
-  runTestClassWithStatic();
+  // runTestClassWithStatic();
   //   runTestClass();
+  // runTemp2General();
+  // runGeneral2Temp();
+  // runTemp2Temp();
+  runTemp2TempClass();
   return 0;
 }
