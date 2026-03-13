@@ -112,4 +112,13 @@ inline void run_操作符重载之set集合()
     s1.print();
     cout << "集合s2: ";
     s2.print();
+
+    Set unionSet = s1 + s2;   // 并集
+    cout << "并集 s1+s2: "; unionSet.print();
+
+    Set diffSet = s1 - s2;    // 差集
+    cout << "差集 s1-s2: "; diffSet.print();
+
+    Set interSet = s1 * s2;   // 交集
+    cout << "交集 s1*s2: "; interSet.print();
 }
